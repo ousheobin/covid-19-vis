@@ -1,0 +1,57 @@
+.home{
+
+    .row{
+        .el-card{
+            margin-top: 20px;
+        }
+    }
+
+    .devider{
+        margin-top: 30px;
+    }
+
+    .el-divider__text{
+        font-weight: bolder;
+        color: #575656;
+        background-color: #e2eef7;
+    }
+
+    .numberPanel{
+
+        border-left: 5px solid;
+        
+        .name{
+            font-size: 16px;
+            color: #383838;
+        }
+        
+        .number{
+            margin-top: 5px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 767px){
+            .name{
+                font-size: 12px;
+            }
+
+            .number{
+                font-size: 22px;
+            }
+        }
+    }
+
+    .chart-cards{
+        margin-bottom: 10px;
+    }
+
+    .section-title{
+        color: #575656;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+}

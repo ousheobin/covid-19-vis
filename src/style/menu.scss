@@ -1,0 +1,23 @@
+.menu-bar{
+    .mobile-menu{
+        margin-top: 20px;
+        float: right;
+    }
+    
+    .pc-menu{
+        background: #e2eef7 !important ;
+        margin-top: 18px;
+        float: right;
+        
+        .el-menu-item:not(.is-disabled):hover, 
+        .el-menu-item:not(.is-disabled):focus,
+        .el-submenu .el-submenu__title:hover {
+            background-color: #e2eef7;
+        }
+
+        &.el-menu--horizontal{
+            border-bottom: none;
+        }
+
+    }    
+}

@@ -1,0 +1,69 @@
+
+@import 'menu.scss';
+@import 'home.scss';
+@import 'cases.scss';
+
+$--color-primary: #447799;
+
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+body{
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #e2eef7;
+}
+
+.app{
+
+  margin: 10px 15px;
+
+  .banner{
+
+      .main-name{
+          margin-bottom: 0px;
+          font-weight: bold;
+          font-size: 32px;
+          color: #db6c6c;
+      }
+
+      @media only screen and (max-width: 767px){
+          .main-name {
+              font-size: 20px;
+          }
+      }
+
+  }
+
+  .source{
+      margin-top: 20px;
+      margin-bottom: 0px;
+      font-size: 10px;
+      color: #636363;
+
+      & a{
+        text-decoration: none;
+        color: #636363;
+    }
+  }
+  
+  .footer{
+      margin-top: 30px;
+      text-align: center;
+      color: #6d6d6d;
+
+      & a{
+          text-decoration: none;
+          color: #6d6d6d;
+      }
+  }
+
+  .remark{
+      font-size: 10px;
+      color: #6d6d6d;
+  }
+
+  
+}
