@@ -28,4 +28,5 @@ git clone https://github.com/BlankerL/DXY-COVID-19-Data.git --depth=1
 python3 python/overall_data.py
 python3 python/dxy_data.py
 python3 python/cases_data.py
+python3 python/media_data.py
 
