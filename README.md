@@ -28,7 +28,7 @@
 $ pip install -r requirement.txt
 $ bash ./buildData.sh
 $ npm install
-$ npm dev
+$ npm run dev
 ```
 
 *本项目使用 Github Action 持续构建，并托管于 Github Action*
