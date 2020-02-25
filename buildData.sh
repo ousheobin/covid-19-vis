@@ -30,3 +30,5 @@ python3 python/dxy_data.py
 python3 python/cases_data.py
 python3 python/media_data.py
 
+echo "public data ls:"
+ls ./public/data
