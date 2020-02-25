@@ -41,7 +41,7 @@ export default {
         return;
       }
       document.getElementById("focus-word-cloud").innerHTML = "";
-
+      let isPCView = window.innerWidth > 767;
       let view = new View();
       view.source(this.$props.jsonData);
       let range = view.range("cnt");
@@ -50,7 +50,7 @@ export default {
       view.transform({
         type: "tag-cloud",
         fields: ["keyword", "cnt"],
-        size: [600, 400],
+        size: (isPCView)?[600, 300]:[300, 300],
         font: "Microsoft Yahei",
         padding: 0,
         spiral: 'archimedean', 
@@ -59,7 +59,12 @@ export default {
         },
         fontSize(d) {
           if (d.value) {
-            return ((d.value - min) / (max - min)) * (60 - 15) + 15;
+            if(isPCView){
+              return ((d.value - min) / (max - min)) * (60 - 15) + 15;
+            }else{
+              return ((d.value - min) / (max - min)) * (20 - 10) + 10;
+            }
+            
           }
           return 0;
         }
@@ -67,8 +72,8 @@ export default {
       let chart = new G2.Chart({
         container: "focus-word-cloud",
         forceFit: true,
-        height: window.innerWidth > 767 ? 300 : 200,
-        padding: [10, 20, 60, 50]
+        height: 300,
+        padding: [10, 10, 10, 10]
       });
       chart.source(view, {
         x: { nice: false },

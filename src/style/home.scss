@@ -54,4 +54,16 @@
         font-size: 20px;
     }
 
+    #focus-word-cloud{
+        margin: 0px auto;
+        width: 600px;
+        height: 300px;
+    }
+
+    @media only screen and (max-width: 767px){
+        #focus-word-cloud{
+            width: 300px;
+        }
+    }
+
 }

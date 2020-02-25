@@ -16,14 +16,15 @@ export default {
       if (!this.$props.jsonData) {
         return;
       }
+      let isPCView = window.innerWidth > 767;
       document.getElementById("focus-overall-index").innerHTML = "";
       let view = new View();
       view.source(this.$props.jsonData);
       let chart = new G2.Chart({
         container: "focus-overall-index",
         forceFit: true,
-        height: window.innerWidth > 767 ? 300 : 200,
-        padding: [10, 30, 60, 50]
+        height: isPCView ? 300 : 200,
+        padding: [10, 30, 60, 30]
       });
 
       chart.source(view, {
@@ -41,24 +42,27 @@ export default {
         .position("date*focus")
         .size(2)
         .shape("smooth");
+      if (isPCView) {
+        chart.guide().dataMarker({
+          position: ["2019-12-31", 9.33],
+          content: "武汉市卫健委发布“不明原因肺炎”通报",
+          lineLength: 30,
+          autoAdjust: true
+        });
+        chart.guide().dataMarker({
+          position: ["2020-01-20", 45.85],
+          content: "钟南山明确表示新型冠状病毒“人传人”",
+          lineLength: 10,
+          autoAdjust: false,
+          direction:'downward'
+        });
+      }
 
-      chart.guide().dataMarker({
-        position: ["2019-12-31", 9.33],
-        content: "武汉市卫健委发布“不明原因肺炎”通报",
-        lineLength: 30,
-        autoAdjust: true,
-      });
-      chart.guide().dataMarker({
-        position: ["2020-01-20", 45.85],
-        content: "钟南山在接受央视连线时明确表示新型冠状病毒“人传人”",
-        lineLength: 30,
-        autoAdjust: true,
-      });
       chart.guide().dataMarker({
         position: ["2020-01-23", 94.168],
         content: "关闭离汉通道",
         lineLength: 30,
-        autoAdjust: true,
+        autoAdjust: true
       });
 
       chart.render();

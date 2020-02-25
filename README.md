@@ -21,7 +21,7 @@
 - Antv G2
 - Echarts (仅用于图的显示)
 
-*本项目部分第三方库使用 bootcdn 加速*
+*本项目部分第三方库使用 bootcdn / unpkg 加速*
 
 ## 如何在本地运行
 ``` shell

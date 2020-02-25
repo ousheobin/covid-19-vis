@@ -13,7 +13,9 @@ module.exports = {
             'vue': 'Vue',
             'echarts': 'echarts',
             'axios': 'axios',
-            'element-ui': 'ELEMENT'
+            'element-ui': 'ELEMENT',
+            '@antv/g2': 'G2',
+            '@antv/data-set':'DataSet'
         },
     }
 }   
