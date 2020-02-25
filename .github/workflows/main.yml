@@ -1,0 +1,46 @@
+  
+name: Build Latest Page
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+    THE_PAPER_DATA_SOURCE: https://github.com/839Studio/Novel-Coronavirus-Updates.git
+    NODE_VERSION: 8.9.4
+    PYTHON_VERSION: 3.8
+    GITHUB_PAGES_DEPLOY_KEY: ${{ secrets.GITHUB_PAGES_DEPLOY_KEY }}
+
+jobs:
+  Update-Github-Pages:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v1
+      with:
+          python-version: ${{ env.PYTHON_VERSION }}
+            
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v1
+      with:
+           node-version: ${{ env.NODE_VERSION }}
+    - name: Install Python Package
+      run: |
+        pip install -r requirements.txt
+      
+    - name: Data Preparation
+      run: |
+           bash ./buildData
+            
+    - name: Npm Build
+      run: |
+           npm install
+           npm run build --if-present
+            
+    - name: Deploy To Page
+      run: |
+           bash ./support/deploy.sh
