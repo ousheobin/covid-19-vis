@@ -7,5 +7,13 @@ module.exports = {
             title: 'COVID-19 数据可视化 - 武汉加油'
         }
     },
-    productionSourceMap:false
-}
+    productionSourceMap:false,
+    configureWebpack:{
+        externals: {
+            'vue': 'Vue',
+            'echarts': 'echarts',
+            'axios': 'axios',
+            'element-ui': 'ELEMENT'
+        },
+    }
+}   

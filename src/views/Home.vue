@@ -203,7 +203,7 @@ export default {
         .catch(() => {
           this.$data.jsonReady = true;
         });
-      Axios.get("./media.UpdateTime.json", {
+      Axios.get("./media.updateTime.json", {
         headers: {
           "Cache-Control": "no-cache"
         }
