@@ -34,7 +34,7 @@ jobs:
       
     - name: Data Preparation
       run: |
-           bash ./buildData
+           bash ./buildData.sh
             
     - name: Npm Build
       run: |
