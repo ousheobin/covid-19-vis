@@ -95,8 +95,7 @@ export default {
       chart.tooltip({
         showTitle:false
       })
-      chart.line().position('intervalName*toHospitalIntervalCnt').tooltip('intervalName*toHospitalIntervalCnt').shape('smooth')
-      chart.interval().position('intervalName*toHospitalIntervalCnt').tooltip(false).opacity(0.6)
+      chart.interval().position('intervalName*toHospitalIntervalCnt').opacity(0.6)
       chart.render();
     }
   },

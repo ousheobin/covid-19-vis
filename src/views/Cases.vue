@@ -50,16 +50,16 @@ export default {
   methods: {
     checkLoading(){
       if(this.$data.csvReady && this.$data.routeReady){
-        // this.$data.loading.close();
+        this.$data.loading.close();
       }
     }
   },
   mounted() {
-    // this.$data.loading = this.$loading({
-    //       lock: true,
-    //       text: '数据加载中，稍等下哈',
-    //       background: 'rgba(226, 238, 247, 0.9)'
-    // })
+    this.$data.loading = this.$loading({
+          lock: true,
+          text: '数据加载中，稍等下哈',
+          background: 'rgba(226, 238, 247, 0.9)'
+    })
     Axios.get("./data/cases.data.csv", {
       headers: {
         "Cache-Control": "no-cache"

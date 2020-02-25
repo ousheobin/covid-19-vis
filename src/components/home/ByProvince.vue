@@ -50,7 +50,6 @@ export default {
           return row
         }
       })
-      console.log(view)
       let chart = new G2.Chart({
         container: "home-by-province",
         forceFit: true,

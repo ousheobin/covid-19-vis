@@ -7,4 +7,5 @@ module.exports = {
             title: 'COVID-19 数据可视化 - 武汉加油'
         }
     },
+    productionSourceMap:false
 }

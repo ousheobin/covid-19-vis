@@ -58,7 +58,7 @@ export default {
             });
             chart.source(view,{
                 date:{
-                    type:'timeCat',
+                    type:'time',
                     mask:'MM-DD'
                 },
                 value:{

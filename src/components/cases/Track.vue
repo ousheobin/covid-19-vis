@@ -19,13 +19,13 @@ export default {
         node.id = node.name;
         if(node.name == '武汉市'){
           node.value = NaN
-          node.symbolSize = 60
+          node.symbolSize = 100
           node.itemStyle = {
             "normal": { "color": "red" }
           }
         }else{
           node.itemStyle = {
-            "normal": { "color": "#0a91a8" }
+            "normal": { "color": "#324D61" }
           }
           node.symbolSize = node.value * 2;
         }
@@ -47,10 +47,10 @@ export default {
             animation: true,
             focusNodeAdjacency: false,
             roam: true,
-            draggable: false,
+            draggable: true,
             data: this.$props.jsonData.nodes,
             force: {
-              edgeLength: 40,
+              edgeLength: 20,
               repulsion: 60
             },
             lineStyle: {

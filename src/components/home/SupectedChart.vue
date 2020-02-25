@@ -28,7 +28,7 @@ export default {
 
       chart.source(view, {
         date: {
-          type: "timeCat",
+          type: "time",
           mask: "MM-DD"
         },
         currentSupect: {
@@ -47,17 +47,10 @@ export default {
       });
 
       chart
-        .line()
+        .interval()
         .position("date*currentSupect")
-        .size(1)
-        .color("#E85C3A")
-        .shape("smooth");
-
-      chart
-        .area()
-        .position("date*currentSupect")
-        .color("#FF8140")
-        .shape("smooth").tooltip(false);
+        .color("#f9cd67")
+        .opacity(0.6);
 
       chart.render();
     }

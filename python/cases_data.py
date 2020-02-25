@@ -50,6 +50,9 @@ for index,row in cases_have_been_wh.iterrows():
             step += 1
 
 route_table = pd.DataFrame(step_list,columns=['source','target','value']).groupby(['source','target']).sum().reset_index()
+route_table.source = route_table.source.apply(lambda value: '武汉市' if value.startswith('武汉') else value )   
+route_table.target = route_table.target.apply(lambda value: '武汉市' if value.startswith('武汉') else value )   
+
 city_set = np.union1d(route_table.source.unique(),route_table.target.unique())
 target_cnt = route_table.groupby('target').sum().reset_index().sort_values(by=['value']).reset_index(drop=True)
 
@@ -60,7 +63,6 @@ for city in city_set:
     else:
         size = 1
     nodes.append({'name':city,'value':int(size)})
-    
     
 json_str = route_table[(route_table['source'] != route_table['target'])].to_json(orient='records',force_ascii=False)
 json_obj = {

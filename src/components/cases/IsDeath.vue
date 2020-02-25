@@ -66,7 +66,7 @@ export default {
         },
         isDeath:{
           type:'cat',
-          alias:'人传人类型'
+          alias:'是否死亡'
         },
       });
       chart.tooltip({

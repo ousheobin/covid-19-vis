@@ -1,6 +1,6 @@
 <template>
   <el-card>
-    <p>确诊病例合计</p>
+    <p>现有确诊病例与重症比例</p>
     <div id="home-confirmed-chart"></div>
   </el-card>
 </template>
@@ -20,16 +20,23 @@ export default {
           type: "csv"
         })
         .transform({
+          type: "map",
+          callback(row) {
+            row.normalConfirmed = Number(row.currentConfrim) - Number(row.currentSerious)
+            row.currentSerious = Number(row.currentConfrim)
+            return row;
+          }
+        })
+        .transform({
           type: "fold",
-          fields: ["currentConfrim", "currentSerious"],
+          fields: ["normalConfirmed", "currentSerious"],
           key: "type",
           value: "value"
         })
         .transform({
           type: "map",
           callback(row) {
-            row.type =
-              row.type === "currentConfrim" ? "当前确诊病例" : "重症病例";
+            row.type = (row.type === "normalConfirmed") ? "一般确诊病例" : "重症病例";
             return row;
           }
         })
@@ -41,11 +48,11 @@ export default {
         container: "home-confirmed-chart",
         forceFit: true,
         height: window.innerWidth > 767 ? 300 : 200,
-        padding: [10, 20, 60, 30]
+        padding: [10, 20, 60, 50]
       });
       chart.source(view, {
         date: {
-          type: "timeCat",
+          type: "time",
           mask: "MM-DD"
         },
         value: {
@@ -63,18 +70,13 @@ export default {
         }
       });
 
-      chart
-        .area()
-        .position("date*value")
-        .color("type", value => {
-          if (value === "当前确诊病例") {
-            return "#FF564D";
+      chart.intervalStack().position('date*value').color("type", value => {
+          if (value === "一般确诊病例") {
+            return "#ff877a";
           } else {
-            return "#850B03";
+            return "#800f03";
           }
-        })
-        .size(1)
-        .shape("smooth");
+        }).opacity(0.6);
 
       chart.render();
     }

@@ -87,8 +87,7 @@ export default {
       chart.tooltip({
         showTitle:false
       })
-      chart.line().position('intervalName*infectIntervalCnt').shape('smooth').tooltip('intervalName*infectIntervalCnt')
-      chart.interval().position('intervalName*infectIntervalCnt').tooltip(false).opacity(0.6)
+      chart.interval().position('intervalName*infectIntervalCnt').opacity(0.6)
       chart.render();
     }
   },

@@ -66,7 +66,7 @@ export default {
         },
         willPerson2Person:{
           type:'cat',
-          alias:'人传人类型'
+          alias:'是否人传人'
         },
       });
       chart.tooltip({
