@@ -21,4 +21,14 @@
 - Antv G2
 - Echarts (仅用于图的显示)
 
+*本项目部分第三方库使用 bootcdn 加速*
+
+## 如何在本地运行
+``` shell
+$ pip install -r requirement.txt
+$ bash ./buildData.sh
+$ npm install
+$ npm dev
+```
+
 *本项目使用 Github Action 持续构建，并托管于 Github Action*
