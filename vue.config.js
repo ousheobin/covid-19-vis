@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production' ? '/covid-19-vis/' : '/',
+    publicPath: './',
     pages: {
         index: {
             entry: './src/main.js',
@@ -14,8 +14,6 @@ module.exports = {
             'echarts': 'echarts',
             'axios': 'axios',
             'element-ui': 'ELEMENT',
-            '@antv/g2': 'G2',
-            '@antv/data-set':'DataSet'
         },
     }
 }   
