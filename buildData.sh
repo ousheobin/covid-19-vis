@@ -13,6 +13,12 @@ else
     return 1
 fi
 
+if [ -d './Novel-Coronavirus-Updates' ];  then
+    rm -rf './Novel-Coronavirus-Updates'
+fi
+
+git clone https://github.com/839-Studio/Novel-Coronavirus-Updates.git --depth=1
+
 if [ -d './DXY-COVID-19-Data' ];  then
     rm -rf './DXY-COVID-19-Data'
 fi
