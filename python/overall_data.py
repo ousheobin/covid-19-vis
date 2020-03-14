@@ -23,7 +23,7 @@ except:
     cov_data = pd.read_csv(path, encoding="gb2312")
 
 cov_data = cov_data.rename(columns={
-    '报道时间':'report_date','省份':'province','城市':'city','新增确诊':'confirmedIncr',
+    '报道时间':'report_date','地区':'province','城市':'city','新增确诊':'confirmedIncr',
     '新增出院':'curedIncr','新增死亡':'deathIncr','消息来源':'source','来源链接1':'link1',
     '来源链接2':'link2','来源链接3':'link3'
 })
