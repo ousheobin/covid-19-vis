@@ -89,15 +89,7 @@ export default {
         .position("healthStaffPer10w*curedRate")
         .shape("circle")
         .tooltip("province*healthStaffPer10w*curedRate")
-        .color("curedRate", val => {
-          if (val > 60) {
-            return "#269e2a";
-          } else if (val > 30) {
-            return "#5eaec1";
-          } else {
-            return "#c15e74";
-          }
-        })
+        .color("curedRate", '#5eaec1-#269e2a')
         .style("continent", {
           lineWidth: 1,
           strokeOpacity: 1,
