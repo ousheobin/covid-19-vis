@@ -23,7 +23,7 @@ export default {
           type: "map",
           callback(row) {
             row.normalConfirmed = Number(row.currentConfrim) - Number(row.currentSerious)
-            row.currentSerious = Number(row.currentConfrim)
+            row.currentSerious = Number(row.currentSerious)
             return row;
           }
         })
